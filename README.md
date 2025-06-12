@@ -1,43 +1,64 @@
-# Netflix-Movies-and-TV-Shows-Analysis
+# Netflix Titles Analysis and Classification
 
-This repository contains a data analysis project focused on Netflix movies and TV shows using a Jupyter Notebook.
+## Project Overview
+This project analyzes Netflix's movie and TV show content dataset to uncover insights about their catalog and builds classification models to predict content type (Movie vs TV Show).
 
-## 📁 File Description
-
-- `netflix-movies-and-tv-shows.ipynb`:  
-  Jupyter Notebook that includes data loading, exploration, preprocessing, and visualization of Netflix content.
-
-## 📊 Dataset
-
-The dataset was obtained from Kaggle and contains details such as:
-- Title
-- Type (Movie or TV Show)
-- Genre
-- Release Year
-- Country
+## Dataset
+The dataset contains information about Netflix movies and TV shows including:
+- Title, director, cast
+- Country of production
+- Date added to Netflix
+- Release year
 - Rating
 - Duration
-- Description
+- Categories
 
-You can access the dataset from Kaggle here:  
-[Netflix Movies and TV Shows Dataset](https://www.kaggle.com/datasets/shivamb/netflix-shows)
+## Analysis Steps
 
-## 🧪 What You’ll Find Inside
+### 1. Data Preprocessing
+- Handled missing values by imputing with mode for categorical features
+- Converted date fields to datetime format
+- Extracted numerical values from duration strings
+- Created additional features (year_added, month_added)
 
-- Data cleaning and preprocessing
-- Exploratory data analysis (EDA)
-- Visualizations using matplotlib and seaborn
-- Insights such as:
-  - Most common genres
-  - Countries with most content
-  - Distribution of release years
-  - Ratings and content durations
+### 2. Exploratory Data Analysis (EDA)
+- Visualized distribution of Movies vs TV Shows
+- Identified top content-producing countries
+- Analyzed most common categories
+- Examined content addition trends over time
+- Compared durations of Movies vs TV Shows
+- Explored relationship between release year and addition year
+- Analyzed content ratings distribution
+- Identified top directors
+- Examined exclusive content by country
+- Investigated seasonality in content additions
 
-## ✅ Requirements
+### 3. Machine Learning Modeling
+- Encoded categorical variables using Label Encoding
+- Scaled features using StandardScaler
+- Split data into training and test sets (80/20)
+- Evaluated 10 different classification algorithms:
+  - SVM
+  - Random Forest
+  - Gradient Boosting
+  - AdaBoost
+  - KNN
+  - Logistic Regression
+  - Decision Tree
+  - Naive Bayes
+  - LDA
+  - MLP Neural Network
 
-Make sure to install the following Python libraries:
-```bash
-pandas
-numpy
-matplotlib
-seaborn
+## Key Results
+The best performing models achieved accuracy of XX% in classifying content as Movies or TV Shows. Detailed performance metrics are available in the results CSV file.
+
+## Technologies Used
+- Python 3
+- Pandas (Data manipulation)
+- Matplotlib/Seaborn (Visualization)
+- Scikit-learn (Machine Learning)
+
+## How to Run
+1. Install required packages: `pip install pandas matplotlib seaborn scikit-learn`
+2. Download the dataset from Kaggle
+3. Run the analysis script: `python netflix_analysis.py`
